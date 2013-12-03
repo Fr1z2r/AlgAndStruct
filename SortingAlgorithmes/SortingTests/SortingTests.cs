@@ -34,5 +34,30 @@ namespace SortingTests
             SetUp(new BubbleSort<int>());
             Assert.IsTrue(SortAndCompare());
         }
+        [TestMethod]
+        public void QuickSortTest_with_2_elements()
+        {
+            _sorter=new QuickSort<int>();
+            array = new[] {2, 1};
+            _sorter.Sort(array);
+            Assert.IsTrue(array[0]==1);
+            Assert.IsTrue(array[1]==2);
+        }
+        [TestMethod]
+        public void QuickSortTest_with_2_sorted_elements()
+        {
+            _sorter = new QuickSort<int>();
+            array = new[] { 1, 2 };
+            _sorter.Sort(array);
+            Assert.IsTrue(array[0] == 1);
+            Assert.IsTrue(array[1] == 2);
+        }
+
+        [TestMethod]
+        public void QuickSortTest()
+        {
+            SetUp(new QuickSort<int>());
+            Assert.IsTrue(SortAndCompare());
+        }
     }
 }
